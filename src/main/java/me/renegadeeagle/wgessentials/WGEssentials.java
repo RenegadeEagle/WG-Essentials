@@ -13,13 +13,11 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class WGEssentials extends JavaPlugin{
 
     public static StateFlag AnvilFlag = new StateFlag("anvilbreak", true);
-    public static StateFlag allowpvpwoarmour = new StateFlag("allowpvpwithoutarmour", true);
-    public static StateFlag flamearrow = new StateFlag("flamearrow", true);
+    public static StateFlag arrow = new StateFlag("arrow", true);
     public void onEnable() {
         this.getWorldGuard();
         this.getWGCustomFlags().addCustomFlag(AnvilFlag);
-        this.getWGCustomFlags().addCustomFlag(allowpvpwoarmour);
-        this.getWGCustomFlags().addCustomFlag(flamearrow);
+        this.getWGCustomFlags().addCustomFlag(arrow);
         this.getServer().getPluginManager().registerEvents(new AnvilDurrabilityListener(this), this);
         this.getServer().getPluginManager().registerEvents(new ArrowSpamListener(this), this);
     }
@@ -41,14 +39,11 @@ public class WGEssentials extends JavaPlugin{
         }
         return (WGCustomFlagsPlugin) plugin;
     }
-    public static StateFlag getAllowpvpwoarmour() {
-        return allowpvpwoarmour;
-    }
     public static StateFlag getAnvilFlag() {
         return AnvilFlag;
     }
-    public static StateFlag getFlamearrow() {
-        return flamearrow;
+    public static StateFlag getAllowArrow() {
+        return arrow;
     }
 }
 
