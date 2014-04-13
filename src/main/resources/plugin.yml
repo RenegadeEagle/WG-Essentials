@@ -1,0 +1,5 @@
+main: me.renegadeeagle.wgessentials.WGEssentials
+name: WGEssentials
+version: 1.0
+author: RenegadeEagle
+depend: [WorldEdit, WorldGuard, WGCustomFlags]
