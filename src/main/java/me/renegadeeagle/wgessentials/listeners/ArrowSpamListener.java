@@ -48,7 +48,7 @@ public class ArrowSpamListener implements Listener {
     @EventHandler
     public void onEntityLandEvent(ProjectileHitEvent event){
         if(event.getEntity() instanceof Arrow){
-            Arrow arrow = (Arrow) event.getEntity(); //<3 safty checks
+            Arrow arrow = (Arrow) event.getEntity();
             if (!instance.getWorldGuard().getRegionManager(event.getEntity().getWorld()).getApplicableRegions(event.getEntity().getLocation()).allows(instance.getAllowArrow())){
                 arrow.remove();
                 if(arrow.getShooter() instanceof  Player) {
